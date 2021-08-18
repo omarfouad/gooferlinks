@@ -1,38 +1,36 @@
 <template>
-  <a class="link-item" :href='data.fields.linkUrl' @click="onClick(data.fields.title)">
+  <a class="link-item" @click="onClick(data.title)">
     <div class="link-wrapper">
-      <div class="beacon" :id="'beacon_' + data.sys.id" ></div>
+      <div class="beacon" :id="'beacon_' + data.id" ></div>
       <div class="artwork">
-        <img crossorigin="anonymous" @load="onLoad(data.sys.id)" :id="'image_' + data.sys.id" :src="data.fields.image.fields.file.url" alt="">
+        <img @load="onLoad(data.id)" :id="'image_' + data.id" :src="data.image" alt="">
       </div>
       
       <div class="details">
-        <div class="title">{{data.fields.title}}</div>
-        <div class="details">{{data.fields.details}}</div>
+        <div class="title">{{data.title}}</div>
+        <div class="details">{{data.details}}</div>
       </div>
     </div>
   </a>
 </template>
 
 <script>
-import FastAverageColor from 'fast-average-color'
 var Notifier = require('../utils/Notifier.js')
+
 export default {
   props: ['data'],
-  
   methods: {
 		onClick(e) {
 			Notifier("Inner Link (" + e + ")")
+			window.location.href = this.data.url
 		},
+
 		onLoad(id){
-			let fac = new FastAverageColor()
 			let image = document.querySelector('#image_' + id)
 			let beacon = document.querySelector('#beacon_' + id)
 
-			fac.getColorAsync(image).then((color) =>  {
-				beacon.style.backgroundColor = color.hex
-				beacon.style.visibility = "visible"
-			})	
+			beacon.style.backgroundColor = this.data.hex
+			beacon.style.visibility = "visible"	
 		}
 	},
 }
@@ -44,6 +42,8 @@ export default {
 .link-item
 	margin-bottom: 20px
 	display: block
+	cursor: pointer
+	
 
 .link-item .link-wrapper:after
 	content: ""
@@ -59,8 +59,16 @@ export default {
 	background-color: #333
 	color: white
 	position: relative
+	transition: all 250ms ease
+	&:hover
+		background-color: #2f2f2f
+		.beacon
+			top: 5px
+		.artwork
+			padding-top: 5px
 
 	& > .beacon
+		transition: all 250ms ease
 		visibility: hidden
 		position: absolute
 		border-radius: 4px
@@ -74,6 +82,7 @@ export default {
 			left: -20px
 		
 	& > .artwork
+		transition: all 250ms ease
 		width: 60px
 		height: 60px
 		padding: 10px 0
@@ -109,7 +118,7 @@ export default {
 		opacity: 1
 		transform: scale(0)
 	50%
-		opacity: 0.2
+		opacity: 0.3
 	100%
 		transform: scale(1.5)
 		opacity: 0

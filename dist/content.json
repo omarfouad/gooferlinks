@@ -1,0 +1,39 @@
+{
+	"header_data": {
+		"header_image": "https://www.dropbox.com/s/flo8wmrqgfzrslj/resized.jpg?raw=1",
+		"rounded_image": "https://www.dropbox.com/s/8xvvwmc88qx0nkq/333.jpg?raw=1",
+
+		"social_links": [
+			{"youtubeurl": "https://youtube.com/goofer"},
+			{"instagramurl": "https://instagram.com/officialgoofer"},
+			{"soundcloudurl": "https://soundcloud.com/official_goofer"},
+			{"twitterurl": "https://twitter.com/officialgoofer"}
+		],
+
+		"bio": "Electronic Musician from Italy"
+	},
+	"links": [
+		{"id": 1, "title": "Check out my latest interview!", "hex":"#6475CC", 
+			"details": "On electrowow.com", "image": "https://www.dropbox.com/s/qmhm27o6mljubye/link_thumb.png?raw=1", 
+			"url": "https://www.electrowow.net/goofer-discusses-the-making-of-his-single-into-the-void-interview"},
+			
+
+		{"id": 2, "title": "Article about Into the Void", "hex":"#6475CC",  
+			"details": "On electrowow.com", "image": "https://www.dropbox.com/s/qmhm27o6mljubye/link_thumb.png?raw=1", 
+			"url": "https://www.electrowow.net/goofer-brings-you-into-a-futuristic-journey-with-this-electro-house-gem"},
+
+
+		{"id": 3, "title": "Into the Void - Single", "hex":"#25DEE8",  
+			"details": "Stream/Buy", "image": "https://www.dropbox.com/s/ebdwac9gwy77u6g/intothevoid.jpg?raw=1", 
+			"url": "https://goofer.fanlink.to/void"},
+
+
+		{"id": 4, "title": "Projections - Single", "hex":"#63460F",  
+			"details": "Stream/Buy", "image": "https://www.dropbox.com/s/ktub31lvux6761h/607be29f2ddc82_25181819.jpg?raw=1", 
+			"url": "https://fanlink.to/goofer-projections"},
+
+			{"id": 5, "title": "The Storm (feat. Storm RNG) - Single", "hex":"#DD1B41",  
+				"details": "Stream/Buy", "image": "https://www.dropbox.com/s/yz7ypnz8rmy8lwj/thestorm.jpg?raw=1", 
+				"url": "https://ffm.to/1n6nbew"}
+	]
+}

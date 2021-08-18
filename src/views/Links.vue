@@ -14,7 +14,6 @@
 </template>
 
 <script>
-var contentful = require('contentful')
 var axios = require('axios')
 
 import Link from '../components/Link.vue'
@@ -26,24 +25,12 @@ export default {
 		
 		Notifier("Links Page")
 
-		var client = contentful.createClient({
-			space: 'vi6hl46udqpd',
-			accessToken: 'wBpUPHueY1ncouzLSMTmYmH5cAcxHNlqb1ERBzrToDc'
+		axios.get('/content.json').then((res) => {
+			this.headerData = res.data.header_data
+			this.links = res.data.links
+			this.headerReady = true;
 		})
-
-		client.getEntries({
-			'content_type': 'link',
-			order: '-fields.order'
-		}).then((entries) => {
-			this.links = entries.items
-		})
-
-		client.getEntries({
-			'content_type': 'linksHeader'
-		}).then((entries) => {
-			this.headerData = entries.items[0].fields
-			this.headerReady = true
-		})
+		
 	},
 
 	data() {

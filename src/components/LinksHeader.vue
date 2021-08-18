@@ -1,20 +1,20 @@
 <template>
   <div class="links-header">
-    <div class="cover" :style="'background-image: url(' + data.coverphoto.fields.file.url + ')'"> </div>
+    <div class="cover" :style="'background-image: url(' + data.header_image + ')'"> </div>
     <div class="profile-card">
-      <div class="avatar" :style="'background-image: url(' + data.avatar.fields.file.url + ')'"></div>
+      <div class="avatar" :style="'background-image: url(' + data.rounded_image + ')'"></div>
       <div class="profile-content">
         <div class="name">Goofer</div>
-        <div class="bio" v-html="data.biotext"></div>
+        <div class="bio" v-html="data.bio"></div>
         <div class="social-links">
           <iframe src="https://open.spotify.com/follow/1/?uri=spotify:artist:00ka0j0W9lE9iO3obHwOxd&size=basicl&theme=light&show-count=0" width="92" height="26" scrolling="no" frameborder="0" style="border:none; overflow:hidden;" allowtransparency="true"></iframe>
           <a href="https://open.spotify.com/artist/00ka0j0W9lE9iO3obHwOxd"></a>
         </div>
         <div class="social-icons">
-          <a class="social-icon-item" :href="data.youtubeurl"><img src="../assets/youtube.svg" alt=""> </a>
-          <a class="social-icon-item" :href="data.instagramurl"><img src="../assets/instagram.svg" alt=""></a>
-          <a class="social-icon-item" :href="data.soundcloudurl"><img src="../assets/soundcloud.svg" alt=""></a>
-          <a class="social-icon-item" :href="data.twitterurl"><img src="../assets/twitter.svg" alt=""></a>
+          <a class="social-icon-item" :href="data.social_links[0].youtubeurl"><img src="../assets/youtube.svg" alt=""> </a>
+          <a class="social-icon-item" :href="data.social_links[1].instagramurl"><img src="../assets/instagram.svg" alt=""></a>
+          <a class="social-icon-item" :href="data.social_links[2].soundcloudurl"><img src="../assets/soundcloud.svg" alt=""></a>
+          <a class="social-icon-item" :href="data.social_links[3].twitterurl"><img src="../assets/twitter.svg" alt=""></a>
         </div>
       </div>
       
@@ -27,17 +27,6 @@
 export default {
   name: "links-header",
   props: ['data'],
-  computed: {
-    getBio() {
-      var chuncks = this.data.bio.content[0].content
-      var bio = ""
-      for (let i = 0; i < chuncks.length; i++) {
-        bio += chuncks[i].value
-        
-      }
-      return bio
-    }
-  }
 }
 </script>
 
@@ -130,6 +119,9 @@ export default {
           display: inline-block
           border-radius: 100%
           margin: 0 5px
+          &:hover
+            background-color: #111
+            
           & > img
             width: 100%
 
