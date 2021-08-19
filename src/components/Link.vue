@@ -107,10 +107,11 @@ export default {
 		& > .title
 			color: #f2f2f2
 			word-wrap: break-word
+			font-size: 13px
 			
 		& > .details
 			color: #999
-			font-size: 14px
+			font-size: 12px
 			padding: 2px 0
 
 @keyframes beacon
