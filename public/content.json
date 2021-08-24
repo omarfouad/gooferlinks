@@ -13,6 +13,10 @@
 		"bio": "Electronic Musician from Italy"
 	},
 	"links": [
+		{"id": 5, "title": "Pre-Save Fumes on Spotify!", "hex":"#2B274A", 
+			"details": "New lo-fi Album", "image": "https://www.dropbox.com/s/vke8sxdxt1s2792/Fumes.jpg?raw=1", 
+			"url": "https://ffm.to/fumes"},
+		
 		{"id": 1, "title": "Check out my latest interview!", "hex":"#6475CC", 
 			"details": "On electrowow.com", "image": "https://www.dropbox.com/s/qmhm27o6mljubye/link_thumb.png?raw=1", 
 			"url": "https://www.electrowow.net/goofer-discusses-the-making-of-his-single-into-the-void-interview"},
